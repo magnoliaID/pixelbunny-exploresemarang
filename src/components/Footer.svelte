@@ -1,64 +1,107 @@
-
 <!-- footer section start -->
 <footer class="xs-footer-section">
-    <div class="container">
-        <div class="xs-footer-top-layer">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 footer-widget xs-pr-20">
-                    <a href="index.html" class="xs-footer-logo">
-                        <img src="assets/images/exploresmg_footer2.png" alt="">
-                    </a>
-                    <p>"Sedekah dapat menghapus dosa sebagaimana Air memadamkan Api (HR. Tirmidzi, dishahihkan Al Albani dalam Shahih  Ad Tirmidzi, 614)."</p>
-                    <ul class="xs-social-list-v2">
-                        <li><a href="" class="color-facebook"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="" class="color-twitter"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="https://www.instagram.com/_exploresmg" class="color-instagram"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="" class="color-pinterest"><i class="fa fa-youtube"></i></a></li>
-                    </ul><!-- .xs-social-list END -->
-                </div>
-                <div class="col-lg-4 col-md-6 footer-widget">
-                    <h3 class="widget-title">About Us</h3>
-                    <ul class="xs-footer-list">
-                        <li><a href="index.html">About</a></li>
-                        <li><a href="#">How it works</a></li>
-                        <li><a href="#">Our Partners</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-md-6 footer-widget">
-                    <h3 class="widget-title">Contact Us</h3>
-                    <ul class="xs-info-list">
-                        <li><i class="fa fa-home"></i>Plamongan Indah Semarang,Jawa Tengah, Indonesia.</li>
-                        <li><i class="fa fa-phone"></i>(+62) 87731030302</li>
-                        <li><i class="fa fa-envelope-o"></i><a
-                                href="mailto:yourname@domain.com">donasi@exploresemarang.com</a></li>
-                    </ul><!-- .xs-list-with-icon END -->
-                </div>
-            </div>
+  <div class="container">
+    <div class="xs-footer-top-layer">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 footer-widget xs-pr-20">
+          <a href="/" class="xs-footer-logo">
+            <img src="/assets/images/exploresmg_footer2.png" alt="" />
+          </a>
+          <p>
+            "Sedekah dapat menghapus dosa sebagaimana Air memadamkan Api (HR.
+            Tirmidzi, dishahihkan Al Albani dalam Shahih Ad Tirmidzi, 614)."
+          </p>
+          <ul class="xs-social-list-v2">
+            <!-- <li>
+              <a href="" class="color-facebook"><i class="fa fa-facebook" /></a>
+            </li> -->
+            <li>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.tiktok.com/@explore_semarang"
+                class="color-twitter"><i class="fab fa-tiktok" /></a
+              >
+            </li>
+            <li>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.instagram.com/_exploresmg"
+                class="color-instagram"><i class="fa fa-instagram" /></a
+              >
+            </li>
+            <li>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.youtube.com/channel/UCQF3ybkH1pTvBw9D20NhIOg"
+                class="color-pinterest"><i class="fa fa-youtube" /></a
+              >
+            </li>
+          </ul>
+          <!-- .xs-social-list END -->
         </div>
-    </div>
-    <div class="container">
-        <div class="xs-copyright">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="xs-copyright-text">
-                        <p>&copy; Copyright 2022 Explore Semarang. - All Right's Reserved</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <nav class="xs-footer-menu">
-                        <ul>
-                            <li><a href="#">FAQ</a></li>
-                            <li><a href="#">Help Desk</a></li>
-                            <li><a href="#">Support</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+        <div class="col-lg-4 col-md-6 footer-widget">
+          <h3 class="widget-title">Tentang Kami</h3>
+          <ul class="xs-footer-list">
+            <li><a href="/about">Explore Semarang</a></li>
+            <li><a href="#">Cara Kerja</a></li>
+            <li><a href="#">Partner Kami</a></li>
+            <li><a href="/contact">Kontak</a></li>
+          </ul>
         </div>
+        <div class="col-lg-4 col-md-6 footer-widget">
+          <h3 class="widget-title">Kontak Kami</h3>
+          <ul class="xs-info-list">
+            <li>
+              <i class="fa fa-home" />Plamongan Indah Semarang,Jawa Tengah,
+              Indonesia.
+            </li>
+            <li><i class="fa fa-phone" />(+62) 87731030302</li>
+            <li>
+              <i class="fa fa-envelope-o" /><a
+                href="mailto:exploresemarang.donasi@gmail.com"
+                >exploresemarang.donasi@gmail.com</a
+              >
+            </li>
+          </ul>
+          <!-- .xs-list-with-icon END -->
+        </div>
+      </div>
     </div>
-    <div class="xs-back-to-top-wraper">
-        <a href="#" class="xs-back-to-top"><i class="fa fa-angle-up"></i></a>
+  </div>
+  <div class="container">
+    <div class="xs-copyright">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="xs-copyright-text">
+            <p>
+              &copy; Copyright 2022 Explore Semarang. - All Right's Reserved
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <nav class="xs-footer-menu">
+            <ul>
+              <li><a href="/faq">FAQ</a></li>
+              <li>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://wa.me/6287731030302">Help Desk</a
+                >
+              </li>
+              <li>
+                <a href="mailto:exploresemarang.donasi@gmail.com">Support</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="xs-back-to-top-wraper">
+    <a href="#" class="xs-back-to-top"><i class="fa fa-angle-up" /></a>
+  </div>
 </footer>
