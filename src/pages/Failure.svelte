@@ -3,19 +3,19 @@
     <div class="notfound">
       <div class="notfound-404" />
       <lottie-player
-        src="https://assets3.lottiefiles.com/packages/lf20_uu0x8lqv.json"
+        src="https://assets10.lottiefiles.com/packages/lf20_pNx6yH.json"
         background="transparent"
         speed="1"
         style="width: 300px; height: 300px;"
         loop
         autoplay
       />
-      <h2>Alhamdulillah</h2>
+      <h2>Ooops!</h2>
       <p>
-        Donasi kamu telah terkirim ke rekening Explore Semarang dan akan segera
-        kami salurkan. kami akan mengirimkan detailnya ke email kamu.
+        Terjadi kesalahan pada pembayaran<br />mohon ulangi atau batalkan
+        donasi.
       </p>
-      <a href="/" class="btn btn-primary">Kembali</a>
+      <a href="/">Kembali</a>
     </div>
   </div>
 </body>
@@ -119,7 +119,7 @@
 
   .notfound a:hover {
     color: #fff;
-    background-color: #00b5c3;
+    background-color: #f7a900;
   }
 
   @media only screen and (max-width: 480px) {
