@@ -1,8 +1,8 @@
 <script>
+  import { onMount, onDestroy, beforeUpdate, afterUpdate } from "svelte";
   import Modal from "./Modal.svelte";
 
   export let charities;
-  let isModalOpen = false;
 
   function calculateFunded(pledged, target) {
     return Math.round((1 / (target / pledged)) * 100);
@@ -20,14 +20,6 @@
     const oneDay = 24 * 60 * 60 * 1000;
     return Math.round(Math.abs(delta / oneDay));
   }
-
-  //   function handleButton() {
-  //     isModalOpen = true;
-  //   }
-
-  //   function handleCloseModal() {
-  //     isModalOpen = false;
-  //   }
 </script>
 
 <!-- popularCauses section -->
@@ -46,172 +38,86 @@
       <!-- .xs-heading-title END -->
     </div>
     <!-- .row end -->
-    {#if charities != undefined}
+
+    <div class="row">
       {#each charities as charity}
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            {#if isModalOpen === true}
-              <Modal>
-                <!-- modal goes here -->
-                <!-- Modal -->
-                <div
-                  class="modal fade show"
-                  id="exampleModal"
-                  tabindex="-1"
-                  role="dialog"
-                  aria-labelledby="exampleModalLabel"
-                >
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">
-                          {charity.title}
-                        </h5>
-                        <button
-                          type="button"
-                          class="close"
-                          data-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <form>
-                          <div class="form-group">
-                            <label for="exampleInputAmount">Jumlah Donasi</label
-                            >
-                            <input
-                              required
-                              type="number"
-                              class="form-control"
-                              id="exampleInputAmount"
-                              aria-describedby="amountHelp"
-                              placeholder="Masukkan nominal yang ingin didonasikan"
-                            />
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputName">Nama</label>
-                            <input
-                              required
-                              type="text"
-                              class="form-control"
-                              id="exampleInputName"
-                              aria-describedby="nameHelp"
-                              placeholder="Masukkan nama lengkap"
-                            />
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Email</label>
-                            <input
-                              required
-                              type="email"
-                              class="form-control"
-                              id="exampleInputEmail1"
-                              aria-describedby="emailHelp"
-                              placeholder="Masukkan email"
-                            />
-                          </div>
-                          <div class="form-check">
-                            <input
-                              type="checkbox"
-                              class="form-check-input"
-                              id="exampleCheck1"
-                            />
-                            <label class="form-check-label" for="exampleCheck1"
-                              >Saya Setuju</label
-                            >
-                          </div>
-                        </form>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-primary"
-                          >Pilih Pembayaran</button
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Modal>
-            {/if}
-            <div class="xs-popular-item xs-box-shadow">
-              <div class="xs-item-header">
-                <img src={charity.thumbnail} alt="" />
+        <div class="col-lg-4 col-md-6">
+          <div class="xs-popular-item xs-box-shadow">
+            <div class="xs-item-header">
+              <img src={charity.thumbnail} alt="" />
 
-                <div class="xs-skill-bar">
-                  <div class="xs-skill-track">
-                    <p>
-                      <span
-                        class="number-percentage-count number-percentage"
-                        data-value="90"
-                        data-animation-duration="3500"
-                        >{calculateFunded(
-                          charity.pledged,
-                          charity.target
-                        )}</span
-                      >%
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <!-- .xs-item-header END -->
-              <div class="xs-item-content">
-                <ul class="xs-simple-tag xs-mb-20">
-                  <li><a href="">{charity.category}</a></li>
-                </ul>
-
-                <a href="#" class="xs-post-title xs-mb-30">{charity.title}</a>
-
-                <ul class="xs-list-with-content">
-                  <li>
-                    {formatCurrency(charity.pledged)}<span
-                      >Donasi <br /> terkumpul</span
-                    >
-                  </li>
-                  <li>
+              <div class="xs-skill-bar">
+                <div class="xs-skill-track">
+                  <p>
                     <span
                       class="number-percentage-count number-percentage"
                       data-value="90"
                       data-animation-duration="3500"
                       >{calculateFunded(charity.pledged, charity.target)}</span
-                    >% <span>Target<br /> Tercapai</span>
-                  </li>
-                  <li>
-                    {calculateDaysRemaining(charity.date_end)}<span
-                      >Hari<br /> tersisa</span
-                    >
-                  </li>
-                </ul>
-
-                <span class="xs-separetor" />
-
-                <div class="row xs-margin-0">
-                  <div class="xs-round-avatar">
-                    <img src={charity.profile_photo} alt="" />
-                  </div>
-                  <div class="xs-avatar-title">
-                    <a href="#"><span>By</span>{charity.profile_name}</a>
-                  </div>
+                    >%
+                  </p>
                 </div>
-
-                <span class="xs-separetor" />
-
-                <a
-                  href="/donation/{charity.id}"
-                  style="color:white;"
-                  class="btn btn-primary btn-block"
-                >
-                  Donasi Sekarang
-                </a>
               </div>
-              <!-- .xs-item-content END -->
             </div>
-            <!-- .xs-popular-item END -->
+            <!-- .xs-item-header END -->
+            <div class="xs-item-content">
+              <ul class="xs-simple-tag xs-mb-20">
+                <li><a href="">{charity.category}</a></li>
+              </ul>
+
+              <a href="/donation/{charity.id}" class="xs-post-title xs-mb-30"
+                >{charity.title}</a
+              >
+
+              <ul class="xs-list-with-content">
+                <li class="pledged">
+                  {formatCurrency(charity.pledged)}<span
+                    >Donasi <br /> terkumpul</span
+                  >
+                </li>
+                <li>
+                  <span
+                    class="number-percentage-count number-percentage"
+                    data-value="90"
+                    data-animation-duration="3500"
+                    >{calculateFunded(charity.pledged, charity.target)}</span
+                  >% <span>Target<br /> Tercapai</span>
+                </li>
+                <li>
+                  {calculateDaysRemaining(charity.date_end)}<span
+                    >Hari<br /> tersisa</span
+                  >
+                </li>
+              </ul>
+
+              <span class="xs-separetor" />
+
+              <div class="row xs-margin-0">
+                <div class="xs-round-avatar">
+                  <img src={charity.profile_photo} alt="" />
+                </div>
+                <div class="xs-avatar-title">
+                  <a href="#"><span>By</span>{charity.profile_name}</a>
+                </div>
+              </div>
+
+              <span class="xs-separetor" />
+
+              <a
+                href="/donation/{charity.id}"
+                style="color:white;"
+                class="btn btn-primary btn-block"
+              >
+                Donasi Sekarang
+              </a>
+            </div>
+            <!-- .xs-item-content END -->
           </div>
+          <!-- .xs-popular-item END -->
         </div>
-        <!-- .row end -->
       {/each}
-    {/if}
+    </div>
+    <!-- .row end -->
   </div>
   <!-- .container end -->
 </section>
@@ -244,5 +150,9 @@
   .show {
     display: block;
     background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .pledged {
+    margin-right: 3em;
   }
 </style>
