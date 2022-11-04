@@ -71,8 +71,9 @@
         <i class="arrow" />
         <h2 class="faq2"><i class="fas fa-credit-card" />Pembayaran</h2>
         <p class="faq">
-          Pembayaran donasi dapat dilakukan melalui transfer bank, minimarket,
-          dan pilihan lainnya.
+          Pembayaran donasi dapat dilakukan melalui Bank transfer dari semua
+          bank di Indonesia (BCA, Mandiri, BRI, Permata, etc) <br />menggunakan
+          Virtual Account (BNI, BRI, Permata) dan Mandiri Bill <br />
         </p>
       </li>
       <li>
