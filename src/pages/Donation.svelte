@@ -15,7 +15,7 @@
 
   async function getCharity(id) {
     const res = await fetch(
-      `http://charity-api-bwa.herokuapp.com/charities/${id}`
+      `https://charity-api-bwa.herokuapp.com/charities/${id}`
     );
     return res.json();
   }
