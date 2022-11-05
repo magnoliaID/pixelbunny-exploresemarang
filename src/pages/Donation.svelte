@@ -1,34 +1,28 @@
 <script>
   import router from "page";
-  import { onMount } from "svelte";
+  import { charity, getCharity } from "../stores/data.js";
+  import { params } from "../stores/pages.js";
   import Header from "../components/Header.svelte";
   import Footer from "../components/Footer.svelte";
   import Loader from "../components/Loader.svelte";
 
-  export let params;
-  let charity,
-    amount,
+  let amount,
     name,
     email,
     agree = false;
-  let data = getCharity(params.id);
 
-  async function getCharity(id) {
-    const res = await fetch(
-      `https://my-json-server.typicode.com/magnoliaID/exploresemarangapi/apiexploresmg/${id}`
-    );
-    return res.json();
-  }
+  getCharity($params.id);
 
   function handleButtonClick() {
     console.log("button click");
   }
 
   async function handleForm(event) {
-    data.pledged = data.pledged + parseInt(amount);
+    const newData = newData.pledged($params.id);
+    newData.pledged = newData.pledged + parseInt(amount);
     try {
       const res = await fetch(
-        `https://my-json-server.typicode.com/magnoliaID/exploresemarangapi/apiexploresmg/${params.id}`,
+        `https://my-json-server.typicode.com/magnoliaID/exploresemarangapi/apiexploresmg/${$params.id}`,
         {
           method: "PUT",
           headers: {
@@ -43,7 +37,7 @@
           "content-type": "application/json",
         },
         body: JSON.stringify({
-          id: params.id,
+          id: $params.id,
           amount: parseInt(amount),
           name,
           email,
@@ -62,9 +56,9 @@
 
 <!-- welcome section -->
 <!--breadcumb start here-->
-{#await data}
+{#if !$charity}
   <Loader />
-{:then charity}
+{:else}
   <section
     class="xs-banner-inner-section parallax-window"
     style="background-image:url('/assets/images/backgrounds/about_bg.png')"
@@ -73,7 +67,7 @@
     <div class="container">
       <div class="color-white xs-inner-banner-content">
         <h2>Donasi Sekarang</h2>
-        <p>{charity.title}</p>
+        <p>{$charity.title}</p>
         <ul class="xs-breadcumb">
           <li class="badge badge-pill badge-primary">
             <a href="/" class="color-white">Beranda /</a> Donasi
@@ -91,7 +85,7 @@
           <div class="col-lg-6">
             <div class="xs-donation-form-images">
               <img
-                src={charity.thumbnail}
+                src={$charity.thumbnail}
                 class="img-responsive"
                 alt="Family Images"
               />
@@ -100,7 +94,7 @@
           <div class="col-lg-6">
             <div class="xs-donation-form-wraper">
               <div class="xs-heading xs-mb-30">
-                <h2 class="xs-title">{charity.title}</h2>
+                <h2 class="xs-title">{$charity.title}</h2>
                 <p class="small">
                   Untuk mempelajari lebih lanjut tentang cara melakukan donasi
                   silahkan hubungi kami melalui halaman "<span
@@ -197,7 +191,7 @@
 
     <!-- End donation form section -->
   </main>
-{/await}
+{/if}
 
 <Footer />
 
