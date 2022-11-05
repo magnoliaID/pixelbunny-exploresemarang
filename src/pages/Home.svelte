@@ -11,7 +11,9 @@
   let data = getData();
 
   async function getData() {
-    const res = await fetch("https://charity-api-bwa.herokuapp.com/charities");
+    const res = await fetch(
+      "https://my-json-server.typicode.com/magnoliaID/exploresemarangapi/apiexploresmg"
+    );
     const data = await res.json();
 
     if (res.ok) {

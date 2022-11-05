@@ -15,7 +15,7 @@
 
   async function getCharity(id) {
     const res = await fetch(
-      `https://charity-api-bwa.herokuapp.com/charities/${id}`
+      `https://my-json-server.typicode.com/magnoliaID/exploresemarangapi/apiexploresmg/${id}`
     );
     return res.json();
   }
@@ -25,28 +25,37 @@
   }
 
   async function handleForm(event) {
-    charity.pledged = charity.pledged + parseInt(amount);
+    data.pledged = data.pledged + parseInt(amount);
     try {
       const res = await fetch(
-        `http://charity-api-bwa.herokuapp.com/charities/${params.id}`,
+        `https://my-json-server.typicode.com/magnoliaID/exploresemarangapi/apiexploresmg/${params.id}`,
         {
           method: "PUT",
           headers: {
             "content-type": "application/json",
           },
-          body: JSON.stringify(charity),
+          body: JSON.stringify(data),
         }
       );
-      console.log(res);
-      router.redirect("/success");
+      const resMid = await fetch(`/.netlify/functions/payment`, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({
+          id: params.id,
+          amount: parseInt(amount),
+          name,
+          email,
+        }),
+      });
+      const midtransData = await resMid.json();
+      console.log(midtransData);
+      window.location.href = midtransData.url;
     } catch (err) {
       console.log(err);
     }
   }
-
-  onMount(async function () {
-    charity = await getCharity(params.id);
-  });
 </script>
 
 <Header />
