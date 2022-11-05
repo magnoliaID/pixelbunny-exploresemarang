@@ -6,10 +6,15 @@
   import Footer from "../components/Footer.svelte";
   import Loader from "../components/Loader.svelte";
 
-  let amount,
+  let amount = 0,
     name,
     email,
-    agree = false;
+    agree = false,
+    contribute = 0;
+
+  $: if ($charity) {
+    contribute = Math.floor((parseInt(amount) / $charity.target) * 100);
+  }
 
   getCharity($params.id);
 
@@ -18,6 +23,7 @@
   }
 
   async function handleForm(event) {
+    agree = false;
     const newData = newData.pledged($params.id);
     newData.pledged = newData.pledged + parseInt(amount);
     try {
@@ -102,6 +108,11 @@
                   >". Atau melalui nomor <br />
                   <span class="color-green">+62 8773 1030 302</span>.
                 </p>
+                <h5>
+                  Donasimu akan berkontribusi sebanyak <strong
+                    >{contribute}%</strong
+                  > dari total donasi saat ini.
+                </h5>
                 <span class="xs-separetor v2" />
               </div>
               <!-- .xs-heading end -->
