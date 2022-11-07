@@ -39,7 +39,7 @@
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://youtube.com/shorts/jwpuI5Eh-UY"
+                href="https://www.youtube.com/shorts/qx3X4LbVMSs"
                 class="xs-video-popup xs-round-btn"
               >
                 <i class="fa fa-play" />

@@ -1,9 +1,9 @@
 import { writable } from "svelte/store";
 
 export const charities = writable([]);
-export const charity = writable([]);
+export const charity = writable({});
 
-async function getCharities() {
+export async function getCharities() {
   const res = await fetch(
     "https://my-json-server.typicode.com/magnoliaID/exploresemarangapi/apiexploresmg"
   );
@@ -23,6 +23,7 @@ export async function getCharity(id) {
   );
   const data = await res.json();
   charity.set(data);
+
   if (res.ok) {
     return data;
   } else {

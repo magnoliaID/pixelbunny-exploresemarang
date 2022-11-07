@@ -1,7 +1,7 @@
 <script>
-  import router from "page";
   import { charity, getCharity } from "../stores/data.js";
   import { params } from "../stores/pages.js";
+  import router from "page";
   import Header from "../components/Header.svelte";
   import Footer from "../components/Footer.svelte";
   import Loader from "../components/Loader.svelte";
@@ -19,12 +19,12 @@
   getCharity($params.id);
 
   function handleButtonClick() {
-    console.log("button click");
+    console.log("Button click");
   }
 
   async function handleForm(event) {
     agree = false;
-    const newData = newData.pledged($params.id);
+    const newData = await getCharity($params.id);
     newData.pledged = newData.pledged + parseInt(amount);
     try {
       const res = await fetch(
@@ -34,7 +34,7 @@
           headers: {
             "content-type": "application/json",
           },
-          body: JSON.stringify(data),
+          body: JSON.stringify(newData),
         }
       );
       const resMid = await fetch(`/.netlify/functions/payment`, {
@@ -59,7 +59,6 @@
 </script>
 
 <Header />
-
 <!-- welcome section -->
 <!--breadcumb start here-->
 {#if !$charity}
@@ -67,7 +66,7 @@
 {:else}
   <section
     class="xs-banner-inner-section parallax-window"
-    style="background-image:url('/assets/images/backgrounds/about_bg.png')"
+    style="background-image:url('/assets/images/backgrounds/kat-yukawa-K0E6E0a0R3A-unsplash.jpg')"
   >
     <div class="xs-black-overlay" />
     <div class="container">
@@ -76,13 +75,15 @@
         <p>{$charity.title}</p>
         <ul class="xs-breadcumb">
           <li class="badge badge-pill badge-primary">
-            <a href="/" class="color-white">Beranda /</a> Donasi
+            <a href="/" class="color-white">Beranda /</a>
+            Donasi
           </li>
         </ul>
       </div>
     </div>
   </section>
-  <!--breadcumb end here--><!-- End welcome section -->
+  <!--breadcumb end here-->
+  <!-- End welcome section -->
   <main class="xs-main">
     <!-- donation form section -->
     <section class="xs-section-padding bg-gray">
@@ -103,15 +104,16 @@
                 <h2 class="xs-title">{$charity.title}</h2>
                 <p class="small">
                   Untuk mempelajari lebih lanjut tentang cara melakukan donasi
-                  silahkan hubungi kami melalui halaman "<span
-                    class="color-green">Kontak</span
-                  >". Atau melalui nomor <br />
-                  <span class="color-green">+62 8773 1030 302</span>.
+                  silahkan hubungi kami melalui halaman "
+                  <span class="color-green">Kontak</span>
+                  ". Atau melalui nomor
+                  <span class="color-green">+62 8773 1030 302</span>
+                  .
                 </p>
                 <h5>
-                  Donasimu akan berkontribusi sebanyak <strong
-                    >{contribute}%</strong
-                  > dari total donasi saat ini.
+                  Donasimu akan berkontribusi sebanyak
+                  <strong>{contribute}%</strong>
+                  dari total donasi saat ini.
                 </h5>
                 <span class="xs-separetor v2" />
               </div>
@@ -132,18 +134,17 @@
                   <input
                     type="text"
                     name="amount"
-                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                     id="xs-donate-amount"
                     class="form-control"
                     bind:value={amount}
                     required="true"
-                    placeholder="Donasimu dalam Rupiah"
+                    placeholder="Your donation in Rupiah"
                   />
                 </div>
                 <!-- .xs-input-group END -->
                 <div class="xs-input-group">
                   <label for="xs-donate-name">
-                    Namamu
+                    Nama
                     <span class="color-light-red">**</span>
                   </label>
                   <input
@@ -158,17 +159,17 @@
                 </div>
                 <div class="xs-input-group">
                   <label for="xs-donate-email">
-                    Emailmu
+                    Email
                     <span class="color-light-red">**</span>
                   </label>
                   <input
                     type="email"
                     name="email"
                     required="true"
+                    bind:value={email}
                     id="xs-donate-email"
                     class="form-control"
-                    bind:value={email}
-                    placeholder="emailmu@gmail.com"
+                    placeholder="email@gmail.com"
                   />
                 </div>
                 <div class="xs-input-group" id="xs-input-checkbox">
@@ -199,7 +200,6 @@
       </div>
       <!-- .container end -->
     </section>
-
     <!-- End donation form section -->
   </main>
 {/if}
@@ -220,9 +220,5 @@
   }
   .xs-donation-form-images {
     text-align: center;
-  }
-
-  .btn-warning {
-    color: white;
   }
 </style>

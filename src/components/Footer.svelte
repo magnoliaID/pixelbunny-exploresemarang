@@ -35,7 +35,7 @@
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://www.youtube.com/channel/UCQF3ybkH1pTvBw9D20NhIOg"
+                href="https://www.youtube.com/channel/UCNpkN3PcbeW5kTSBHvPdcSA"
                 class="color-pinterest"><i class="fa fa-youtube" /></a
               >
             </li>
