@@ -1,9 +1,15 @@
 <script>
   import router from "page";
   import Header from "../components/Header.svelte";
+  import { onDestroy } from "svelte";
+
   import Footer from "../components/Footer.svelte";
 
   let visible = false;
+
+  onDestroy(function () {
+    window.scrollTo(0, 0);
+  });
 
   function toggleVissible() {
     visible = !visible;

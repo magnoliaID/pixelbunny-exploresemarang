@@ -13,8 +13,9 @@
           <span class="icon-water" />
           <h5>Air<br />Minum</h5>
           <p>
-            jadi gini mbheeheeeeekkk. mbheeeeek. ya ndak tau ko tanya saya. ini
-            gimana kok gak responsive.
+            Air putih berperan untuk mengurangi dehidrasi dan mengoptimalkan
+            fungsi otak. Kami ikut berperan menyumbangkan air minum untuk
+            anak-anak panti asuhan agar kebutuhan mineralnya tercukupi.
           </p>
         </div>
         <!-- .xs-service-promo END -->
@@ -24,8 +25,8 @@
           <span class="icon-groceries" />
           <h5>Makanan <br />dan Sembako</h5>
           <p>
-            jadi gini mbheeheeeeekkk. mbheeeeek. ya ndak tau ko tanya saya. ini
-            gimana kok gak responsive.
+            Kami berpartisipasi dalam menyalurkan donasi dalam bentuk makanan
+            dan sembako untuk memenuhi gizi anak-anak di panti asuhan.
           </p>
         </div>
         <!-- .xs-service-promo END -->
@@ -33,10 +34,11 @@
       <div class="col-md-6 col-lg-3">
         <div class="xs-service-promo">
           <span class="icon-heartbeat" />
-          <h5>Peralatan <br />Kesehatan</h5>
+          <h5>Obat dan <br />Peralatan Kesehatan</h5>
           <p>
-            jadi gini mbheeheeeeekkk. mbheeeeek. ya ndak tau ko tanya saya. ini
-            gimana kok gak responsive.
+            Tidak semua anak memiliki kondisi kesehatan yang sama. Kami turut
+            menyalurkan donasi dalam bentuk obat-obatan maupun alat kesehatan
+            bagi yang membutuhkan.
           </p>
         </div>
         <!-- .xs-service-promo END -->
@@ -46,8 +48,9 @@
           <span class="icon-open-book" />
           <h5>Perlengkapan <br />Sekolah</h5>
           <p>
-            jadi gini mbheeheeeeekkk. mbheeeeek. ya ndak tau ko tanya saya. ini
-            gimana kok gak responsive.
+            Pendidikan merupakan kebutuhan bagi setiap anak. Kami membatu
+            menyalurkan donasi dalam bentuk perlengkapan sekolah untuk membantu
+            kegiatan belajar anak-anak di panti asuhan.
           </p>
         </div>
         <!-- .xs-service-promo END -->

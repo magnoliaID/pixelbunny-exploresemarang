@@ -95,6 +95,120 @@
     </nav>
     <!-- .xs-menus .fundpress-menu END -->
   </div>
+
   <!-- .container end -->
 </header>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li
+      data-target="#carouselExampleIndicators"
+      data-slide-to="0"
+      class="active"
+    />
+    <li data-target="#carouselExampleIndicators" data-slide-to="1" />
+    <li data-target="#carouselExampleIndicators" data-slide-to="2" />
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img
+        class="d-block w-100"
+        src="/assets/images/slider/slider1.png"
+        alt="First slide"
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <div class="xs-welcome-wraper color-white">
+          <h2>Explore Semarang</h2>
+          <p>
+            Jalan-jalan sambil menebar kebahagiaan
+            <br />
+            dan keberkahan kepada sesama.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img
+        class="d-block w-100"
+        src="/assets/images/slider/slider2.png"
+        alt="Second slide"
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <div class="xs-welcome-wraper color-white">
+          <h2>Pemberi Rejeki</h2>
+          <p>
+            Apapun harta yang kalian infakkan maka Allah pasti akan
+            menggantikannya
+            <br />
+            dan Dia adalah sebaik-baiknya pemberi rejeki.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img
+        class="d-block w-100"
+        src="/assets/images/slider/slider3.png"
+        alt="Third slide"
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <div class="xs-welcome-wraper color-white">
+          <h2>Yuk Jalan-Jalan!</h2>
+          <p>
+            Kenali kota Semarang dari sisi kemanusiaannya. Sembari berusaha
+            menjadi manusia
+            <br />
+            yang bermanfaat bagi sesama.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a
+    class="carousel-control-prev"
+    href="#carouselExampleIndicators"
+    role="button"
+    data-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true" />
+    <span class="sr-only">Previous</span>
+  </a>
+  <a
+    class="carousel-control-next"
+    href="#carouselExampleIndicators"
+    role="button"
+    data-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true" />
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
 <!-- End header section -->
+<style>
+  .carousel-item {
+    height: 100vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .carousel-caption {
+    bottom: 270px;
+  }
+
+  .carousel-caption h5 {
+    font-size: 45px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 25px;
+  }
+
+  .carousel-caption p {
+    width: 75%;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.9;
+  }
+</style>

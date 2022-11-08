@@ -1,10 +1,112 @@
 <script>
+  import { fade, slide, fly } from "svelte/transition";
+  import { onDestroy } from "svelte";
+
   import Header from "../components/Header.svelte";
   import Footer from "../components/Footer.svelte";
   import Loader from "../components/Loader.svelte";
+
+  onDestroy(function () {
+    window.scrollTo(0, 0);
+  });
+  function scrollToForm() {
+    document
+      .querySelector("#popularcause")
+      .scrollIntoView({ behavior: "smooth" });
+  }
+  import { AnimatedCounter } from "@benzara/svelte-animated-counter";
 </script>
 
-<Header />
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <!-- <title>Charity Press - Home One</title> -->
+  <meta name="description" content="" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CRoboto+Slab:400,700"
+    rel="stylesheet"
+  />
+
+  <link rel="icon" type="image/png" href="favicon.ico" />
+  <!-- Place favicon.ico in the root directory -->
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
+
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/assets/css/xsIcon.css" />
+  <link rel="stylesheet" href="/assets/css/isotope.css" />
+  <link rel="stylesheet" href="/assets/css/magnific-popup.css" />
+  <link rel="stylesheet" href="/assets/css/owl.carousel.min.css" />
+  <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="/assets/css/animate.css" />
+
+  <!--For Plugins external css-->
+  <link rel="stylesheet" href="/assets/css/plugins.css" />
+
+  <!--Theme custom css -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!--Theme Responsive css-->
+  <link rel="stylesheet" href="/assets/css/responsive.css" />
+
+  <!-- use only color version -->
+  <!-- <link rel='stylesheet' type='text/css' href='assets/css/colors/color-1.css' > -->
+</head>
+<!-- header section -->
+<header class="xs-header header-transparent">
+  <div class="container">
+    <nav class="xs-menus">
+      <!-- .nav-header END -->
+      <div class="nav-menus-wrapper row">
+        <div class="xs-logo-wraper col-lg-2 xs-padding-0">
+          <a class="nav-brand" href="/">
+            <img src="/assets/images/logo22.png" alt="" />
+          </a>
+        </div>
+        <!-- .xs-logo-wraper END -->
+        <div class="col-lg-7">
+          <ul class="nav-menu">
+            <li>
+              <a href="/">Beranda</a>
+            </li>
+            <li>
+              <a href="/about">Tentang Kami</a>
+            </li>
+            <!-- <li>
+                <a href="/gallery">Gallery</a>
+              </li> -->
+            <li>
+              <a href="/contact">Kontak</a>
+            </li>
+          </ul>
+          <!-- .nav-menu END -->
+        </div>
+        <div class="xs-navs-button d-flex-center-end col-lg-3">
+          <a
+            style="color:white;"
+            href="/"
+            on:click={scrollToForm}
+            class="btn btn-primary"
+          >
+            <span class="badge">
+              <i class="fa fa-heart" />
+            </span>
+            Donasi Yuk!
+          </a>
+        </div>
+        <!-- .xs-navs-button END -->
+      </div>
+      <!-- .nav-menus-wrapper .row END -->
+    </nav>
+    <!-- .xs-menus .fundpress-menu END -->
+  </div>
+</header>
 <!-- welcome section -->
 <!--breadcumb start here-->
 
@@ -76,9 +178,14 @@
           <div class="xs-about-feature">
             <h3>Misi</h3>
             <p class="lead">
-              The CharityPress community was named a “Top 25 Best Global
-              Philanthropist” by Barron’s. We beat Oprah. And, Mashable named
-              CharityPress something like that.
+              Mengajak masyarakat umum, badan usaha & komunitas lain yang
+              memiliki jiwa sosial untuk ikut serta dalam penggalangan bantuan
+              berupa sumbangan materi, tenaga serta pikiran yang bermanfaat bagi
+              masyarakat kurang mampu di indonesia. <br /><br />Turut serta
+              membantu pemerintah mensejahterahkan masyarakat indonesia yang
+              kurang mampu dengan cara memberikan bantuan/sumbangan sembako,
+              barang atau uang sesuai kebutuhan rutin. <br /><br /> Membantu mewujudkan
+              masyarakat indonesia yang peduli akan lingkungan sekitar
             </p>
           </div>
         </div>
@@ -86,9 +193,9 @@
           <div class="xs-about-feature">
             <h3>Visi</h3>
             <p class="lead">
-              The Globian Fund for Charities seeks positive change around the
-              world through support of non-profit organizations dedicated to
-              social, cultural.
+              Menjadi suatu organisasi profesional yang memiliki tujuan ikut
+              membantu dan memajukan serta mensejahterahkan masyarakat indonesia
+              dimulai sari Kota Semarang.
             </p>
           </div>
         </div>
@@ -96,10 +203,10 @@
           <div class="xs-about-feature">
             <h3>Nilai</h3>
             <ul class="xs-unorder-list play green-icon">
-              <li>Accountability</li>
-              <li>Reliability</li>
-              <li>Cost-effectiveness</li>
-              <li>Personal service</li>
+              <li>Akuntabilitas</li>
+              <li>Keandalan</li>
+              <li>Efektivitas biaya</li>
+              <li>Layanan Pribadi</li>
             </ul>
           </div>
         </div>
@@ -129,7 +236,7 @@
             <span
               class="number-percentage-count number-percentage"
               data-value="100"
-              data-animation-duration="3500">0</span
+              data-animation-duration="3500">100</span
             >
             <small>Panti Asuhan</small>
           </div>
@@ -138,9 +245,9 @@
           <div class="xs-single-funFact color-white">
             <i class="icon-group" />
             <span
-              class="number-percentage-count number-percentage"
+              class="number-percentage-count number-percentage "
               data-value="500"
-              data-animation-duration="3500">0</span
+              data-animation-duration="3500">500</span
             >
             <small>Donator</small>
           </div>
@@ -148,10 +255,11 @@
         <div class="col-lg-3 col-md-6">
           <div class="xs-single-funFact color-white">
             <i class="icon-children" />
+
             <span
-              class="number-percentage-count number-percentage"
+              class="number-percentage-count number-percentage "
               data-value="1000"
-              data-animation-duration="3500">0</span
+              data-animation-duration="3500">1000</span
             >
             <small>Anak Yatim</small>
           </div>
@@ -160,9 +268,9 @@
           <div class="xs-single-funFact color-white">
             <i class="icon-planet-earth" />
             <span
-              class="number-percentage-count number-percentage"
+              class="number-percentage-count number-percentage "
               data-value="50"
-              data-animation-duration="3500">0</span
+              data-animation-duration="3500">50</span
             ><span />
             <small>Kelurahan</small>
           </div>
@@ -195,10 +303,11 @@
         <div class="col-md-6 col-lg-3">
           <div class="xs-service-promo">
             <span class="icon-water color-orange" />
-            <h5>Pure Water <br />For Poor People</h5>
+            <h5>Air <br />Minum</h5>
             <p>
-              663 million people drink dirty water. Learn how access to clean
-              water can improve health, boost local economies.
+              Air putih berperan untuk mengurangi dehidrasi dan mengoptimalkan
+              fungsi otak. Kami ikut berperan menyumbangkan air minum untuk
+              anak-anak panti asuhan agar kebutuhan mineralnya tercukupi.
             </p>
           </div>
           <!-- .xs-service-promo END -->
@@ -206,10 +315,10 @@
         <div class="col-md-6 col-lg-3">
           <div class="xs-service-promo">
             <span class="icon-groceries color-red" />
-            <h5>Healty Food <br />For Poor People</h5>
+            <h5>Makanan <br />dan Sembako</h5>
             <p>
-              663 million people drink dirty water. Learn how access to clean
-              water can improve health, boost local economies.
+              Kami berpartisipasi dalam menyalurkan donasi dalam bentuk makanan
+              dan sembako untuk memenuhi gizi anak-anak di panti asuhan.
             </p>
           </div>
           <!-- .xs-service-promo END -->
@@ -217,10 +326,11 @@
         <div class="col-md-6 col-lg-3">
           <div class="xs-service-promo">
             <span class="icon-heartbeat color-purple" />
-            <h5>Medical <br />Facilities for People</h5>
+            <h5>Obat <br />dan Peralatan Kesehatan</h5>
             <p>
-              663 million people drink dirty water. Learn how access to clean
-              water can improve health, boost local economies.
+              Tidak semua anak memiliki kondisi kesehatan yang sama. Kami turut
+              menyalurkan donasi dalam bentuk obat-obatan maupun alat kesehatan
+              bagi yang membutuhkan.
             </p>
           </div>
           <!-- .xs-service-promo END -->
@@ -228,10 +338,11 @@
         <div class="col-md-6 col-lg-3">
           <div class="xs-service-promo">
             <span class="icon-open-book color-green" />
-            <h5>Pure Education <br />For Every Children</h5>
+            <h5>Perlengkapan <br />Sekolah</h5>
             <p>
-              663 million people drink dirty water. Learn how access to clean
-              water can improve health, boost local economies.
+              Pendidikan merupakan kebutuhan bagi setiap anak. Kami membatu
+              menyalurkan donasi dalam bentuk perlengkapan sekolah untuk
+              membantu kegiatan belajar anak-anak di panti asuhan.
             </p>
           </div>
           <!-- .xs-service-promo END -->

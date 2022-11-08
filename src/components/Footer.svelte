@@ -2,6 +2,16 @@
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
+  if (window.location.hash) {
+    // smooth scroll to the anchor id
+    "html,body".animate(
+      {
+        scrollTop: window.location.hash.offset().top + "px",
+      },
+      1000,
+      "swing"
+    );
+  }
 </script>
 
 <!-- footer section start -->
@@ -18,9 +28,14 @@
             Tirmidzi, dishahihkan Al Albani dalam Shahih Ad Tirmidzi, 614)."
           </p>
           <ul class="xs-social-list-v2">
-            <!-- <li>
-              <a href="" class="color-facebook"><i class="fa fa-facebook" /></a>
-            </li> -->
+            <li>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.facebook.com/profile.php?id=100087216957796"
+                class="color-facebook"><i class="fa fa-facebook" /></a
+              >
+            </li>
             <li>
               <a
                 target="_blank"

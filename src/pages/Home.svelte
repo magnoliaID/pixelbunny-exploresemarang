@@ -18,7 +18,7 @@
 </script>
 
 <Header />
-<Welcome />
+<!-- <Welcome /> -->
 <CharityList />
 <Promo />
 <Footer />
