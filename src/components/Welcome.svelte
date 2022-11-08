@@ -1,3 +1,11 @@
+<script>
+  function scrollToForm() {
+    document
+      .querySelector("#popularcause")
+      .scrollIntoView({ behavior: "smooth" });
+  }
+</script>
+
 <!-- welcome section -->
 <section class="">
   <div>
@@ -16,7 +24,8 @@
           </p>
           <a
             style="color:white;"
-            href="#popularcause"
+            href="/"
+            on:click={scrollToForm}
             class="btn btn-outline-primary"
           >
             Lihat Daftar Donasi

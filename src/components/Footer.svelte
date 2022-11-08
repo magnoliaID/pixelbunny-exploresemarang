@@ -1,3 +1,9 @@
+<script type="text/javascript">
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+</script>
+
 <!-- footer section start -->
 <footer class="xs-footer-section">
   <div class="container">
@@ -102,6 +108,8 @@
     </div>
   </div>
   <div class="xs-back-to-top-wraper">
-    <a href="#" class="xs-back-to-top"><i class="fa fa-angle-up" /></a>
+    <a href="/" on:click={scrollToTop} class="xs-back-to-top"
+      ><i class="fa fa-angle-up" /></a
+    >
   </div>
 </footer>

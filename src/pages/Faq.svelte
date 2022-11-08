@@ -72,8 +72,9 @@
         <h2 class="faq2"><i class="fas fa-credit-card" />Pembayaran</h2>
         <p class="faq">
           Pembayaran donasi dapat dilakukan melalui Bank transfer dari semua
-          bank di Indonesia (BCA, Mandiri, BRI, Permata, etc) <br />menggunakan
-          Virtual Account (BNI, BRI, Permata) dan Mandiri Bill <br />
+          bank di Indonesia (BCA, Mandiri, BRI, Permata, etc) <br />Menggunakan
+          Virtual Account (BNI, BRI, Permata) dan Mandiri Bill <br />Menggunakan
+          Gopay atau QRIS
         </p>
       </li>
       <li>

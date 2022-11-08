@@ -4,7 +4,7 @@
     <div class="xs-heading xs-mb-70 text-center">
       <h2 class="xs-mb-0 xs-title">
         Kami terus menyalurkan <span>Donasimu </span> kepada yang membutuhkan.
-        Lebih dari <span>100 Panti Asuhan </span>terbantu setiap <br /> Tahunnya.
+        Lebih dari <span>1000 Anak Panti Asuhan </span>terbantu setiap <br /> Tahunnya.
       </h2>
     </div>
     <div class="row">

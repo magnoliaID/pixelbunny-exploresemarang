@@ -6,7 +6,7 @@
 	<title>Explore Semarang</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+	
 	<title>Explore Semarang - Donasi Kemanusiaan</title>
 
 	<link rel='icon' type='image/png' href='/favicon.png'>
@@ -53,6 +53,20 @@
 	<script defer src='/assets/js/bootstrap.min.js'></script>
 	<script defer src='/assets/js/jquery.countdown.min.js'></script>
 	<script defer src='/build/bundle.js'></script>
+
+	<script>
+		$("a[href^='#']").click(function(e) {
+	e.preventDefault();
+	
+	var position = $($(this).attr("href")).offset().top;
+
+	$("body, html").animate({
+		scrollTop: position
+	} /* speed */ );
+});
+	</script>
+
+	
 	
 	
 </head>

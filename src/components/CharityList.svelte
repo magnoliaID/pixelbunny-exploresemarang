@@ -17,6 +17,7 @@
   }
 
   function calculateDaysRemaining(date_end) {
+    // console.log(date_end);
     const delta = date_end - new Date();
     const oneDay = 24 * 60 * 60 * 1000;
     return Math.round(Math.abs(delta / oneDay));
@@ -44,7 +45,7 @@
       {#each $charities as charity}
         <div
           class="col-lg-4 col-md-6"
-          in:slide={{ delay: 500 }}
+          in:slide={{ delay: 1000 }}
           out:fade={{ delay: 500 }}
         >
           <div class="xs-popular-item xs-box-shadow">
@@ -108,7 +109,12 @@
                   <img src={charity.profile_photo} alt="" />
                 </div>
                 <div class="xs-avatar-title">
-                  <a href="#"><span>By</span>{charity.profile_name}</a>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://wa.me/6287731030302"
+                    ><span>By</span>{charity.profile_name}</a
+                  >
                 </div>
               </div>
 

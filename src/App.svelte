@@ -9,6 +9,8 @@
   import Success from "./pages/Success.svelte";
   import Failure from "./pages/Failure.svelte";
   import Faq from "./pages/Faq.svelte";
+  // import { db } from "./firebase.js";
+  // import { collection, doc, getFirestore } from "Firebase/firestore/lite";
 
   // export let ready;
 

@@ -1,3 +1,11 @@
+<script>
+  function scrollToForm() {
+    document
+      .querySelector("#popularcause")
+      .scrollIntoView({ behavior: "smooth" });
+  }
+</script>
+
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
@@ -69,7 +77,12 @@
           <!-- .nav-menu END -->
         </div>
         <div class="xs-navs-button d-flex-center-end col-lg-3">
-          <a style="color:white;" href="#popularcause" class="btn btn-primary">
+          <a
+            style="color:white;"
+            href="/"
+            on:click={scrollToForm}
+            class="btn btn-primary"
+          >
             <span class="badge">
               <i class="fa fa-heart" />
             </span>
