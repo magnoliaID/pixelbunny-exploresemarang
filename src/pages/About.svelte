@@ -181,11 +181,7 @@
               Mengajak masyarakat umum, badan usaha & komunitas lain yang
               memiliki jiwa sosial untuk ikut serta dalam penggalangan bantuan
               berupa sumbangan materi, tenaga serta pikiran yang bermanfaat bagi
-              masyarakat kurang mampu di indonesia. <br /><br />Turut serta
-              membantu pemerintah mensejahterahkan masyarakat indonesia yang
-              kurang mampu dengan cara memberikan bantuan/sumbangan sembako,
-              barang atau uang sesuai kebutuhan rutin. <br /><br /> Membantu mewujudkan
-              masyarakat indonesia yang peduli akan lingkungan sekitar
+              masyarakat kurang mampu di indonesia.
             </p>
           </div>
         </div>
